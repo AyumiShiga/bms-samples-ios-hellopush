@@ -218,7 +218,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let payLoad = ((((userInfo as NSDictionary).valueForKey("aps") as! NSDictionary).valueForKey("alert") as! NSDictionary).valueForKey("body") as! NSString)
         
-        self.showAlert("Recieved Push notifications", message: payLoad)
+        self.showAlert("Recieved Push Notification", message: payLoad)
         
         let push =  BMSPushClient.sharedInstance
         
@@ -247,7 +247,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let payLoad = ((((userInfo as NSDictionary).valueForKey("aps") as! NSDictionary).valueForKey("alert") as! NSDictionary).valueForKey("body") as! NSString)
         
-        self.showAlert("Recieved Push notifications", message: payLoad)
+        self.showAlert("Recieved Push Notification", message: payLoad)
         
         let push =  BMSPushClient.sharedInstance
         
