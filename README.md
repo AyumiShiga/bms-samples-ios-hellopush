@@ -28,7 +28,8 @@ Create a mobile backend in the  Bluemix dashboard:
 
 1.	In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
 2.	Enter a name and host for your mobile backend and click **Create**.
-3.	Click **Finish**.
+3. Once complete, scroll to the bottom of the page and select **View App Overview**.
+4. From the **App Overview** page, you will see the **Mobile Options** displayed (**Route** and **App GUID**). Be sure to save these values, they will be needed later.
 
 Configure Push Notification service:
 
@@ -44,7 +45,7 @@ Configure Push Notification service:
 5. Run the `pod install` command to download and install the required dependencies.
 6. Open the Xcode workspace: `open helloPush.xcworkspace`. From now on, open the xcworkspace file since it contains all the dependencies and configuration.
 7. Open the `AppDelegate.m` and add the corresponding **ApplicationRoute** and
-**ApplicationID** in the application `didFinishLaunchingWithOptions` method:
+**ApplicationID** (AppGUID) that you saved earlier to the application `didFinishLaunchingWithOptions` method:
 
 
 Objective C:
@@ -66,6 +67,8 @@ return YES;
 For push notifications to work successfully, you must run the helloPush sample on a physical iOS device. You will also need a valid APNs enabled bundle id, provisioning profile, and development certificate.
 
 When you run the application, you will see a single view application with a "Register for Push" button. When you click this button the application will attempt to register the device and application to the Push Notification Service. The app uses an alert to display the registration status (successful or failed).
+
+To send a push notification from the Bluemix dashboard follow [Sending basic push notifications](https://www.bluemix.net/docs/services/mobilepush/t_send_push_notifications.html)
 
 When a push notification is received and the application is in the foreground, an alert is displayed showing the notification's content. The application uses the **ApplicationRoute** and **ApplicationID** specified in the AppDelegate to connect to the IBM Push Notification Service on Bluemix. The registration status and other information is displayed  in the Xcode Console 
 
